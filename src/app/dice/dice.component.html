@@ -1,0 +1,5 @@
+<!-- <div class="dice">Dice Value: {{ diceValue }}</div> -->
+<div class="dice" [class.rolling]="rolling">
+    <span *ngIf="!rolling">{{ diceValue }}</span>
+</div>
+  

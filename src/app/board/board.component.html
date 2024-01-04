@@ -1,0 +1,26 @@
+<!-- <div>
+    <app-player *ngFor="let player of players" [player]="player"></app-player>
+  </div>
+  <div>
+    <app-dice [diceValue]="diceValue"></app-dice>
+    <button (click)="rollDice()">Roll Dice</button>
+  </div>
+   -->
+
+<div class="container">
+  <div class="board">
+    <div *ngFor="let cell of boardCells()" class="cell">
+        <app-player 
+        *ngIf="isPlayerInCell(cell)"
+        [player]="getPlayerInCell(cell)"
+        ></app-player>    
+      {{ cell }}
+    </div>
+  </div>
+  <div>
+    <app-dice [diceValue]="diceValue" [rolling]="rollingDice"  (click)="rollDice()" ></app-dice>
+    <!-- <button (click)="rollDice()" [disabled]="isGameOver() || rollingDice">Roll Dice</button> -->
+  </div>
+</div>
+  
+  

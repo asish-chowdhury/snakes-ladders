@@ -1,12 +1,18 @@
-import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { BoardComponent } from './board/board.component';
+import { PlayerComponent } from './player/player.component';
+import { DiceComponent } from './dice/dice.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    BoardComponent,
+    PlayerComponent,
+    DiceComponent
   ],
   imports: [
     BrowserModule,

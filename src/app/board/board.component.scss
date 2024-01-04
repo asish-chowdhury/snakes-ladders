@@ -1,0 +1,26 @@
+.board {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-gap: 5px;
+  }
+  
+  .cell {
+    border: 1px solid #000;
+    padding: 10px;
+    height: 35px;
+    text-align: center;
+    position: relative;
+  }
+  
+  .cell app-player {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  // .container{
+  //   width: 700px;
+  //   display: flex;
+  //   flex-direction: row;
+  // }
+  

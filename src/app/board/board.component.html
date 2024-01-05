@@ -21,7 +21,7 @@
       <!-- <app-player *ngIf="isPlayerInCell(cell)" [player]="getPlayerInCell(cell)"></app-player> -->
       <div class="cell-content">
         <span *ngIf="hasSnake(cell)" class="snake-icon">🐍</span>
-        <img src="../assets/ladder.png" *ngIf="hasLadder(cell)" class="ladder-icon"/>
+        <img src="assets/ladder.png" *ngIf="hasLadder(cell)" class="ladder-icon"/>
         {{ hasSnake(cell) ? getSnakeEnd(cell) : (hasLadder(cell) ? getLadderEnd(cell) : cell) }}
       
         <ng-container *ngFor="let player of getPlayersInCell(cell)">

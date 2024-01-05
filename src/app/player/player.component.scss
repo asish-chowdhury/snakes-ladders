@@ -1,24 +1,20 @@
 .player {
-  width: 55px;
-  }
-  
-  /* Dynamically set the background color based on player ID */
-  // .player[style] {
-  //   background-color: var(--player-color);
-  // }  
+  width: 45px;
+}
 
-  .player1 {
-    left: 0;
-  }
-  
-  .player2 {
-    left: 10px; /* Adjust the left value based on your image size and layout */
-  }
-  
-  .player3 {
-    left: 20px; /* Adjust the left value based on your image size and layout */
-  }
-  
-  .player4 {
-    left: 30px; /* Adjust the left value based on your image size and layout */
-  }
+.player1 {
+  margin-left: 0;
+  border-radius: 50%;
+}
+
+.player2 {
+  margin-left: 10px;
+}
+
+.player3 {
+  margin-left: 20px;
+}
+
+.player4 {
+  margin-left: 30px;
+}

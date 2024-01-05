@@ -14,14 +14,16 @@ export class BoardComponent implements OnInit {
     { start: 16, end: 6 },
     { start: 47, end: 26 },
     { start: 65, end: 34 },
+    { start: 84, end: 35 },
     { start: 93, end: 20 },
     { start: 99, end: 36 }
   ];
   ladders = [
     { start: 2, end: 39 },
-    { start: 20, end: 41 },
     { start: 29, end: 63 },
-    { start: 56, end: 85 }
+    { start: 40, end: 80 },
+    { start: 56, end: 85 },
+    { start: 71, end: 92 }
   ];
 
   ngOnInit() {
@@ -43,19 +45,34 @@ export class BoardComponent implements OnInit {
     }
     return position;
   }
+  // boardCells(): number[] {
+  //   const cells: number[] = [];
+
+  //   for (let row = 1; row <= 10; row++) {
+  //     const isReverse = row % 2 === 0;
+
+  //     for (let col = 1; col <= 10; col++) {
+  //       const baseCell = (row - 1) * 10 + col;
+  //       const cell = isReverse ? baseCell + 9 - 2 * (col - 1) : baseCell;
+  //       cells.push(cell);
+  //     }
+  //   }
+
+  //   return cells;
+  // }
   boardCells(): number[] {
     const cells: number[] = [];
-
-    for (let row = 1; row <= 10; row++) {
-      const isReverse = row % 2 === 0; // Check if the row needs to be reversed
-
+  
+    for (let row = 10; row >= 1; row--) {
+      const isReverse = (row % 2 == 0);
+  
       for (let col = 1; col <= 10; col++) {
         const baseCell = (row - 1) * 10 + col;
         const cell = isReverse ? baseCell + 9 - 2 * (col - 1) : baseCell;
         cells.push(cell);
       }
     }
-
+  
     return cells;
   }
 
@@ -124,6 +141,9 @@ export class BoardComponent implements OnInit {
   getLadderEnd(cell: number): number {
     const ladder = this.ladders.find(l => l.start === cell);
     return ladder ? ladder.end : cell;
+  }
+  getPlayersInCell(cell: number): Player[] {
+    return this.players.filter(player => player.position === cell);
   }
   
 

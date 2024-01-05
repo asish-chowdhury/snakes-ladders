@@ -17,24 +17,10 @@
 
 .cell app-player {
   position: absolute;
-  top: 0;
-  left: 0;
+  top: -14px;
+  left: -35px;
 }
 
-// .container{
-//   width: 700px;
-//   display: flex;
-//   flex-direction: row;
-// }
-
-// .arrows-svg {
-//   // position: absolute;
-//   z-index: 1;
-// }
-// .grid-cell {
-//   fill: #c92929; /* Ensure a visible fill color for the grid cells */
-//   stroke: #000000; /* Ensure a visible stroke color for the grid cells */
-// }
 
 .cell-content {
   position: absolute;
@@ -43,10 +29,11 @@
   transform: translate(-50%, -50%);
 }
 
-.snake-icon{
+.snake-icon {
   font-size: 30px;
 }
-.ladder-icon{
+
+.ladder-icon {
   // font-size: 10px;
   height: 30px;
   width: 80px;

@@ -8,10 +8,15 @@ import { Component, Input } from '@angular/core';
 export class DiceComponent {
   @Input() diceValue !: number;
   @Input() rolling: boolean = false;
-  // @Input() activePlayerColor: string = 'red';
 
-  // getDiceStyle(): any {
-  //   return this.rolling ? { animation: 'rollDice 2s ease-out infinite' } : { backgroundColor: this.activePlayerColor };
+  // playClickSound(): void {
+  //   const audio = new Audio('assets\rpg-dice-rolling-95182.mp3');
+  //   audio.play();
   // }
+
+  // onClick(): void {
+  //   this.playClickSound();
+  // }
+
 
 }

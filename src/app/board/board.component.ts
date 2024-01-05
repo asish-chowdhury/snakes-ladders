@@ -17,11 +17,10 @@ export class BoardComponent implements OnInit {
     { start: 93, end: 20 },
     { start: 99, end: 36 }
   ];
-
   ladders = [
-    { start: 2, end: 38 },
+    { start: 2, end: 39 },
     { start: 20, end: 41 },
-    { start: 38, end: 63 },
+    { start: 29, end: 63 },
     { start: 56, end: 85 }
   ];
 
@@ -45,8 +44,19 @@ export class BoardComponent implements OnInit {
     return position;
   }
   boardCells(): number[] {
-    // Generate an array of numbers from 1 to 100 for the board cells
-    return Array.from({ length: 100 }, (_, i) => i + 1);
+    const cells: number[] = [];
+
+    for (let row = 1; row <= 10; row++) {
+      const isReverse = row % 2 === 0; // Check if the row needs to be reversed
+
+      for (let col = 1; col <= 10; col++) {
+        const baseCell = (row - 1) * 10 + col;
+        const cell = isReverse ? baseCell + 9 - 2 * (col - 1) : baseCell;
+        cells.push(cell);
+      }
+    }
+
+    return cells;
   }
 
   isPlayerInCell(cell: number): boolean {
@@ -97,6 +107,26 @@ export class BoardComponent implements OnInit {
       }, 1000); // Adjust the total duration based on your animation duration
     }
   }
+
+
+  hasSnake(cell: number): boolean {
+    return this.snakes.some(snake => snake.start === cell);
+  }
+  
+  hasLadder(cell: number): boolean {
+    return this.ladders.some(ladder => ladder.start === cell);
+  }
+  getSnakeEnd(cell: number): number {
+    const snake = this.snakes.find(s => s.start === cell);
+    return snake ? snake.end : cell;
+  }
+  
+  getLadderEnd(cell: number): number {
+    const ladder = this.ladders.find(l => l.start === cell);
+    return ladder ? ladder.end : cell;
+  }
+  
+
 }
 
 interface Player {

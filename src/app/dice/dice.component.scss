@@ -1,15 +1,16 @@
 .dice {
   border: 1px solid #000;
-    padding: 10px;
-    margin: 5px;
-    display: inline-block;
-    transition: transform 2s ease-out;
-    color: white;
-    background-color: darkslategrey;
-    border-radius: 8px;
-    height: 20px;
-    width: 20px;
-    text-align: center;
+  padding: 10px;
+  margin: 5px;
+  display: inline-block;
+  transition: transform 2s ease-out;
+  color: white;
+  background-color: darkslategrey;
+  border-radius: 8px;
+  height: 40px;
+  width: 40px;
+  text-align: center;
+  font-size: 30px;
 }
 
 .rolling {
@@ -20,15 +21,19 @@
   0% {
     transform: rotate(0deg);
   }
+
   25% {
     transform: rotate(360deg);
   }
+
   50% {
     transform: rotate(720deg);
   }
+
   75% {
     transform: rotate(1080deg);
   }
+
   100% {
     transform: rotate(1440deg);
   }

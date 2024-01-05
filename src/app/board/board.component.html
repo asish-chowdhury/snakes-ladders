@@ -1,13 +1,5 @@
-<!-- <div>
-    <app-player *ngFor="let player of players" [player]="player"></app-player>
-  </div>
-  <div>
-    <app-dice [diceValue]="diceValue"></app-dice>
-    <button (click)="rollDice()">Roll Dice</button>
-  </div>
-   -->
 
-<div class="container">
+<!-- <div class="container">
   <div class="board">
     <div *ngFor="let cell of boardCells()" class="cell">
         <app-player 
@@ -19,8 +11,28 @@
   </div>
   <div>
     <app-dice [diceValue]="diceValue" [rolling]="rollingDice"  (click)="rollDice()" ></app-dice>
-    <!-- <button (click)="rollDice()" [disabled]="isGameOver() || rollingDice">Roll Dice</button> -->
+  </div>
+</div> -->
+
+<!-- board.component.html -->
+<div class="container">
+  <div class="board">
+    <div *ngFor="let cell of boardCells()" class="cell">
+      <app-player *ngIf="isPlayerInCell(cell)" [player]="getPlayerInCell(cell)"></app-player>
+      <div class="cell-content">
+        <span *ngIf="hasSnake(cell)" class="snake-icon">🐍</span>
+        <!-- <span *ngIf="hasLadder(cell)" class="ladder-icon"></span> -->
+        <img src="../assets/ladder.png" *ngIf="hasLadder(cell)" class="ladder-icon"/>
+        <!-- {{ cell }} -->
+        {{ hasSnake(cell) ? getSnakeEnd(cell) : (hasLadder(cell) ? getLadderEnd(cell) : cell) }}
+      </div>
+    </div>
+  </div>
+  <div style="display: flex; font-size: 20px;">
+    <app-dice [diceValue]="diceValue" [rolling]="rollingDice" (click)="rollDice()"></app-dice>
+    <div>
+      <p>Player {{currentPlayerIndex+1}}'s Turn</p>
+    </div>
   </div>
 </div>
-  
-  
+
